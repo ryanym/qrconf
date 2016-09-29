@@ -6,8 +6,7 @@
 </head>
 <body>
 {{ file.name }}
-{% load static %}
-<img src="/static/{{ file.id }}.png">
-
+{{ file.qr_code.url }}
+<img src="{{ file.qr_code.url }}">
 </body>
 </html>

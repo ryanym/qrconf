@@ -9,7 +9,7 @@ def index(request):
     return HttpResponse("qr app home")
 
 
-def display_qr(request,file_id):
+def display(request, file_id):
 
     file_ = File.objects.get(pk=file_id)
     context = {

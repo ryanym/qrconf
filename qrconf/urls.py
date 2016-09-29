@@ -15,8 +15,9 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from .settings import *
 
 urlpatterns = [
-    url(r'^file/', include('qr.urls')),
+    url(r'^qr/', include('qr.urls')),
     url(r'^admin/', admin.site.urls),
 ]
