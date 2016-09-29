@@ -10,4 +10,4 @@ urlpatterns = [
     url(r'^(?P<file_id>[0-9]+)/$', views.display, name='display'),
 ]
 
-urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
