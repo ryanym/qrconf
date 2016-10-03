@@ -11,7 +11,7 @@ from django.core.urlresolvers import reverse
 class File(models.Model):
     name = models.CharField(max_length=100)
     is_signed = models.BooleanField(default=False)
-    qr_code = models.ImageField(upload_to='qrcode', null=True, blank=True)  # TODO need to add width/height
+    qr_code = models.ImageField(upload_to='qrcode', null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     signed_at = models.DateTimeField(null=True,blank=True)
 
@@ -19,7 +19,7 @@ class File(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('qr.views.display', args=(str(self.id),))
+        return reverse('qr.views.display', args=(str(self.pk)))
 
 
     def generate_qrcode(self):
